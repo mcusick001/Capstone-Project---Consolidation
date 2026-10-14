@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  db:
+    image: mariadb:10.5
+    container_name: news_mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: news_db
+      MYSQL_ROOT_PASSWORD: secretpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+  web:
+    build: .
+    container_name: news_django_app
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=django-insecure-docker-secret-key
+      - DEBUG=True
+      - DB_NAME=news_db
+      - DB_USER=root
+      - DB_PASSWORD=secretpassword
+      - DB_HOST=db
+      - DB_PORT=3306
+    depends_on:
+      - db
+
+volumes:
+  mariadb_data:
