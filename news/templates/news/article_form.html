@@ -1,0 +1,12 @@
+{% extends 'news/base.html' %}
+{% block content %}
+<div class="container mt-4" style="max-width: 600px;">
+    <h2>Write New Article</h2>
+    <form method="post" class="mt-3">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Submit for Review</button>
+        <a href="{% url 'journalist_dashboard' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
