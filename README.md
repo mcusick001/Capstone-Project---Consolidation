@@ -67,41 +67,48 @@ news_project/
 3 - LOCAL SETUP & INSTALLATION
 -----------------------------
 1. Clone the repository and navigate into the project directory:
-   bash
+   ```bash
 
-   git clone [https://github.com/mcusick001/News-Application.git]
-
-   cd News-Application
+   git clone [https://github.com/mcusick001/Capstone-Project---Consolidation.git]
+   cd Capstone-Project---Consolidation
+   ```
 
 2. Database Setup (MySQL/MariaDB):
    This project requires a relational database. Follow these commands to
    set up your database.
    1. Open your terminal and log into the MySQL/Maria DB command line
    interface:
-   bash
+   ```bash
 
    mysql -u root -p
    (Enter your root password when prompted)
+   ```
 
    2. Run the following SQL query to create the project database:
-   sql
+   ```sql
 
    CREATE DATABASE news_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+   ```
 
    3. Exist the MySQL command line prompt:
-   sql
+   ```sql
 
    EXIT;
+   ```
 
 3. Create and activate a Python virtual environment:
+   ```bash
+
    python -m venv venv
    venv\Scripts\Activate.ps1
+   ```
 
 4. Install required dependencies & configure settings:
    1. Install all required project packages:
-   bash
+   ```bash
 
    pip install -r requirements.txt
+   ```
 
    2. Open your news_project/settings.py and update your
    database configuration details to match your local credentials
@@ -115,20 +122,23 @@ news_project/
 
 5. Run database migrations & Create Admin User:
    1. Apply the database migrations to build your tables:
-      bash
+      ```bash
 
       python manage.py makemigrations
       python manage.py migrate
+      ```
 
    2. Create an administrative superuser account:
-      bash
+      ```bash
 
       python manage.py createsuperuser
+      ```
 
 6. Launch the local development server:
-   bash
+   ```bash
 
    python manage.py runserver
+   ```
 
 7. Accessing the application
    Once the server is running, you can open your web browser and access
