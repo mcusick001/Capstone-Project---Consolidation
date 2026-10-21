@@ -2,7 +2,7 @@
                       DJANGO NEWS API CAPSTONE PROJECT
 ========================================================================
 
-1. PROJECT OVERVIEW
+1 - PROJECT OVERVIEW
 -------------------
 This project is a comprehensive full-stack News and Content Management Portal
 built with Django and Django REST Framework (DRF), backed by a MariaDB relational
@@ -16,7 +16,7 @@ from your GitHub profile:
 https://github.com/mcusick001/News-Application.git
 
 --------------------
-2. PROJECT STRUCTURE
+2 - PROJECT STRUCTURE
 --------------------
 news_project/
 │
@@ -64,7 +64,7 @@ news_project/
 └── requirements.txt
 
 
-3. LOCAL SETUP & INSTALLATION
+3 - LOCAL SETUP & INSTALLATION
 -----------------------------
 1. Clone the repository and navigate into the project directory:
    bash
@@ -141,7 +141,7 @@ news_project/
    - Django Admin Panel: http://127.0.0.1:8000/admin/
    - REST API Root: http://127.0.0.1:8000/api/
 
-4. DOCKER IMPLEMENTATION
+4 - DOCKER IMPLEMENTATION
 -----------------------
 This project includes fill containerization support using Docker and Docker
 Compose, allowing you to run the Django News API application and its database
@@ -180,7 +180,7 @@ seamlessly on any environment without manual dependency setup.
       docker compose down
       ```
 
-5. AUTOMATED TEST SUITE
+5 - AUTOMATED TEST SUITE
 -----------------------
 The project includes a robust unit test suite (`APITestCase`) in `news/tests.py`
 covering authentication, RBAC permissions, webhook mocking, and subscription filtering.
