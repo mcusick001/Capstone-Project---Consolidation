@@ -141,7 +141,46 @@ news_project/
    - Django Admin Panel: http://127.0.0.1:8000/admin/
    - REST API Root: http://127.0.0.1:8000/api/
 
-4. AUTOMATED TEST SUITE
+4. DOCKER IMPLEMENTATION
+-----------------------
+This project includes fill containerization support using Docker and Docker
+Compose, allowing you to run the Django News API application and its database
+seamlessly on any environment without manual dependency setup.
+  1. Clone the repository and switch to the container branch (or main).
+     ```bash
+
+     git clone [https://github.com/mcusick001/Capstone-Project---Consolidation.git]
+     cd Capstone-Project---Consolidation
+     ```
+
+  2. Build and start the containers:
+     ```bash
+
+     docker compose up --build
+     ```
+
+  3. Access the Application:
+     - Open your browser and navigate to http://localhost:8000 to view front-end
+       article feed and dashboards.
+     - Access the REST API endpoints at http://localhost:8000/api/
+     - Access the Django Admin panel at http://localhost:8000/admin/
+
+  4. Running Management Commands (Optional):
+     If you need to create a superuser or run custom management commands while
+     containers are running:
+     ```bash
+
+     docker compose exec web python manage.py createsuperuser
+     ```
+
+   5. Stopping the Containers:
+      To stop the running services, press Ctrl + C in your terminal or run:
+      ```bash
+
+      docker compose down
+      ```
+
+5. AUTOMATED TEST SUITE
 -----------------------
 The project includes a robust unit test suite (`APITestCase`) in `news/tests.py`
 covering authentication, RBAC permissions, webhook mocking, and subscription filtering.
